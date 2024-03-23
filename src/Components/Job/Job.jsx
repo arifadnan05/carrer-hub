@@ -1,7 +1,8 @@
 import { SlLocationPin } from "react-icons/sl";
 import { AiOutlineDollarCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
     return (
         <div>
             <div className="card bg-base-100 shadow-xl min-h-[400px]">
@@ -22,7 +23,9 @@ const Job = ({ job }) => {
                         </p>
                     </div>
                     <div className="card-actions">
+                        <Link to= {`/job/${id}`}>
                         <button className="btn btn-primary">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
